@@ -35,8 +35,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         contactForSegue = contacts[indexPath.row]
-        self.performSegue(withIdentifier: "contactDetails", sender: self)
+        self.performSegue(withIdentifier: "ContactViewController", sender: self)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let contactViewController = segue.destination as! ContactViewController
@@ -64,13 +65,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ]
                     self.contacts.append(contactDetails as! [String : String])
                 }
+                
                 self.contactTable.reloadData()
                 
             case .failure(let error):
                 print(error)
             }
         }
-        
     }
 }
 
