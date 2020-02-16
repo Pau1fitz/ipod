@@ -1,0 +1,5 @@
+use_frameworks!
+target 'ipod' do
+    pod 'Alamofire', '~> 4.2'
+    pod 'SwiftyJSON', '~> 4.2'
+end
